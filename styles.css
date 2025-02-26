@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('caminho/para/sua/imagem-pokedex.png'); /* Altere para o caminho da sua imagem */
+    background-size: cover; /* Faz a imagem cobrir todo o fundo */
+    background-position: center; /* Centraliza a imagem */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative; /* Necessário para posicionamento do conteúdo */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    z-index: 1; /* Coloca o conteúdo acima do fundo */
+}
+
+#searchInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #333;
+    border-radius: 5px;
+}
+
+.pokeball {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.pokedex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 70vh;
+    width: 90%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    width: 180px;
+    height: 280px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-front {
+    text-align: center;
+}
+
+.card-number {
+    font-size: 14px; /* Tamanho do número */
+    font-weight: bold;
+    color: #fff; /* Cor do número */
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro para melhor contraste */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 5px; /* Espaçamento interno */
+    position: absolute; /* Posiciona no canto */
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância do lado direito */
+}
+
+.pokemon-image {
+    width: 100px;
+    height: auto;
+    margin: 15px 0;
+}
+
+.card-front h2 {
+    color: #fff;
+    font-size: 18px;
+    margin: 5px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.nav-buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #ff4444;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #cc0000;
+}
+
+/*******LEYAUTE DO FOOTER******/
+footer {
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    z-index: 1; /* Coloca o footer acima do fundo */
+}
+
+footer p {
+    margin: 5px 0 0;
+    font-size: 24px; /* Tamanho do texto */
+    color: #333; /* Cor original do texto */
+    overflow: hidden;
+    display: inline-block;
+    position: relative; /* Necessário para o pseudo-elemento */
+}
+
+.wave-text::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #ff5e62, #ff9966); /* Degradê colorido */
+    top: 0;
+    left: -100%; /* Começa fora da tela */
+    animation: wave 1.5s infinite linear;
+    z-index: -1; /* Coloca a onda atrás do texto */
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
